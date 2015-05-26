@@ -7,15 +7,10 @@
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 
-require_once('../../Documents/mysql_connect.php');
+require_once('../../../Documents/mysql_connect.php');
 
 class DataAccess
 {
-    
-    
-    
-    
-    
     //returns an array containing the data specified in the function parameters 
     //pass in null if no where clause is needed
     function selectData($range, $table,$where)
@@ -88,7 +83,7 @@ class DataAccess
         $array;
         //count loops
         $i=0;
-             while($row = mysqli_fetch_array($queryReturn))
+            while($row = mysqli_fetch_array($queryReturn))
             {
                 
                 $array[$i]['title'] = $row['title'];  
@@ -100,6 +95,29 @@ class DataAccess
         
         return $array; 
         
+    }
+    
+    //returns all articles associated with a page
+    function getArticles($pageId)
+    {
+        $queryReturn = $this->selectData('*','article','page_id = ' . $pageId);
+        
+                $array;
+        //count loops
+        $i=0;
+            while($row = mysqli_fetch_array($queryReturn))
+            {
+                $array[$i]['articleId'] = $row['article_id'];
+                $array[$i]['title'] = $row['title'];  
+                $array[$i]['content'] = $row['content'];  
+                $array[$i]['articleOrder'] = $row['article_order'];  
+                $array[$i]['pageId'] = $row['page_id'];  
+                
+                $i++;
+            //    echo $row['title'];  
+            }
+        
+        return $array; 
     }
 
 }//end class

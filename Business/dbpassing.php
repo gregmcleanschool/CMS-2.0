@@ -1,7 +1,14 @@
+
 <?php
+
+
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+
 
 require_once('../Data/dataaccess.php');
 require_once('dataclasses.php');
+
 
 //this is where we contruct classes based on tables 
 //from databases 
@@ -41,7 +48,7 @@ class DataPassing
         
         $pages;
         
-        $i = 0;
+        
         
         foreach($data as $page)
         {
@@ -55,12 +62,38 @@ class DataPassing
             );
             
             $pages[] = $aPage;
-            $i++;
+       
         }
         
         return $pages;
     }
     
+    function getArticleByPageId($pageId)
+    {
+        $db = new DataAccess();
+        $data = $db->getArticles($pageId);
+        //this array will store the articles
+        $articles;
+        
+        foreach($data as $article)
+        {
+        //($id, $title, $content, $articleOrder, $pageId)
+        
+        $aArticle = new Article(
+             $article['articleId'],
+             $article['title'],
+             $article['content'],
+             $article['articleOrder'],
+             $pageId
+            );
+            
+            $articles[] = $aArticle;
+       
+        }
+        
+        return $articles;
+        
+    }
     
     
 }
@@ -71,11 +104,11 @@ class DataPassing
 
 // $test = new DataPassing();
 
-// $class =  $test->getPageByWebPageId(1);
+// $class =  $test->getArticleByPageId(4);
 
 // foreach($class as $c)
 // {
-// echo $c->getPageTitle(); 
+// echo $c->getContent(); 
 // }
 
 ?>

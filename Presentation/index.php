@@ -31,8 +31,20 @@ $pages = $db->getPageByWebPageId($webSiteId);
         <?php        
             }
 		?>
-
+        
+        <div class = 'article'>
+		<?php
+		//START Test
+		$articles = $db->getArticleByPageId(4);
 		
+		foreach($articles as $a)
+		{
+		    echo $a->getTitle();
+		    echo $a->getContent();
+		}
+		//END TEST
+		?>
+		</span>
 		
 	</body>
 	<footer>

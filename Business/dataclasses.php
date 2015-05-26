@@ -65,6 +65,44 @@ class WebPage
 
 class Article
 {
+    private $id;
+    private $title;
+    private $content;
+    private $articleOrder;
+    private $pageId;
     
+    function __construct($id, $title, $content, $articleOrder, $pageId)
+    {
+        $this->id = $id;
+        $this->title = $title;
+        $this->content = $content;
+        $this->articleOrder = $articleOrder;
+        $this->pageId = $pageId;
+    }
+    
+    function getId()
+    {
+        return $this->id;
+    }
+    
+    function getTitle()
+    {
+        return $this->title;
+    }
+    
+    function getContent()
+    {
+        return $this->content;
+    }
+    
+    function getArticleOrder()
+    {
+        return $this->articleOrder;
+    }
+    
+    function getPageId()
+    {
+        return $this->pageId;
+    }
 }
 ?>
