@@ -3,6 +3,7 @@
 $(document).ready(function(){
 	
 	addSpanToName();
+	animateWebpageTitle();
 	
 	//wraps each letter in the name paragraph in a <span> tag 
 	//for individual animation 
@@ -15,7 +16,7 @@ $(document).ready(function(){
 		{
 			var spanOpen = "<span id = 'nameAnimate" + i + "'>"
 			var spanClose = "</span>"
-			nameWithEachLetterSpanned += spanOpen + name.charAt(i) + spanClose ;
+			nameWithEachLetterSpanned += spanOpen + name.charAt(i) + spanClose;
 		}
 		
 		document.getElementById("name").innerHTML = nameWithEachLetterSpanned;
@@ -23,10 +24,10 @@ $(document).ready(function(){
 		
 	}
 	
-	//when button is clicked
-    $("#test").click(function(){				
-			
-		for(i=0;i<name.length;i++)
+	//makes letters in webpage title appear one by one
+	function animateWebpageTitle()
+	{
+	   		for(i=0;i<name.length;i++)
 		{
 				//get the span names created in addSpanToName()
 				var spanName = "#nameAnimate" + i;
@@ -50,17 +51,51 @@ $(document).ready(function(){
 														opacity: '1'});
 				}
 				
-		}
-
-    });
+		} 
+	}
 	
+
+
+    //     $("p").click(function(){
+    //     $(this).hide();
+    // });
 
 	
 	//when the mouse hovers over a page
-    $("div").hover(function(){
+    // $(".noHilight").hover(function(){
+    //     // if($( this ).attr('class') == "noHilight")
+    //     // {
+    //         //change css to show highlighted div
+    //         $( this ).toggleClass("highlight");
+    //         //get the page id selected
+    //         var selectedPageId = $( this ).attr('id');
+    //         //display articles assocaited with that page
+    //         var selectedArticles = '.articleOnPage' + selectedPageId.slice(-1);
+    //         $('#test').html(selectedArticles);
+            
+    //       //  $('#atPage5').css('display','inline');
+            
+    //         $(selectedArticles).fadeToggle(300);
+    //       // $(selectedArticles).children("span").toggle();
+
+    // });
+	
+	
+	//when the mouse hovers over a page
+    $(".noHilight").click(function(){
+        //change css to show highlighted div
         $( this ).toggleClass("highlight");
-    });
-	
-	
+        //get the page id selected
+        var selectedPageId = $( this ).attr('id');
+        //display articles assocaited with that page
+        var selectedArticles = '.articleOnPage' + selectedPageId.slice(-1);
+        $('#test').html(selectedArticles);
+        
+      //  $('#atPage5').css('display','inline');
+        
+        $(selectedArticles).fadeToggle(300);
+       // $(selectedArticles).children("span").toggle();
+        
+    });	
 	
 });//end onload

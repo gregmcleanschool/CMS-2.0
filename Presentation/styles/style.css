@@ -6,7 +6,7 @@ text-align: center;
 top: 110px;
 }
 
-span{
+[id^="nameAnimate"]{
 position: relative;
 opacity: 0.0;
 }
@@ -17,17 +17,35 @@ vertical-align: middle;
 opacity: 1.0;
 }
 
-div.article{
-text-align: center;
+h3.articleTitle{
+display: block;
 
-width: 50%;
-opacity: 1.0;
 
-min-width: 200px;
 }
 
+[class^="articleOnPage"] {
+text-align: center;
+width: 50%;
+opacity: 1.0;
+margin-left: auto;
+margin-right: auto;
+min-width: 200px;
+display:none;
+padding: 10px;
+}
+
+
+
 div{
-height: 100px;
+
+}
+
+
+div.noHilight{
+border: 2px solid black;
+background-color: White ;
+
+height: 50px;
 width: 50%;
 min-width: 200px;
 text-align: center;
@@ -36,17 +54,22 @@ margin-left: auto;
 margin-right: auto;
 margin-top: 20px;
 opacity: 0.0;
-}
 
-
-div.noHighlight{
-border: 2px solid black;
-background-color: White ;
 }
 
 
 div.highlight{
 background-color: LightGrey ;
+
+height: 50px;
+width: 50%;
+min-width: 200px;
+text-align: center;
+display: table;
+margin-left: auto;
+margin-right: auto;
+margin-top: 20px;
+opacity: 0.0;
 
 }
 

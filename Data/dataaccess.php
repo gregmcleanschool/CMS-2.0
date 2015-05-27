@@ -98,9 +98,12 @@ class DataAccess
     }
     
     //returns all articles associated with a page
-    function getArticles($pageId)
+    function getArticles($webPageId)
     {
-        $queryReturn = $this->selectData('*','article','page_id = ' . $pageId);
+        $queryReturn = $this->selectData('article.*','  article 
+                                                RIGHT JOIN page
+                                                ON page.page_id = article.page_id
+                                                ','page.webpage_id = '. $webPageId);
         
                 $array;
         //count loops

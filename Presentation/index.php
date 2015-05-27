@@ -25,29 +25,34 @@ $pages = $db->getPageByWebPageId($webSiteId);
     		foreach ($pages as $p) 
     		{
     	?>
-	    <div class = 'noHighlight'>
+	    <div class = 'noHilight' id = 'page <?php echo $p->getPageId(); ?>'>
 		    <span class = 'page'><?php echo $p->getPageTitle(); ?></span>
 		</div>
         <?php        
             }
 		?>
         
-        <div class = 'article'>
+        
 		<?php
 		//START Test
-		$articles = $db->getArticleByPageId(4);
+		$articles = $db->getArticleByPageId(1);
 		
 		foreach($articles as $a)
 		{
-		    echo $a->getTitle();
-		    echo $a->getContent();
+		    ?>
+	    <div class = 'articleOnPage<?php echo $a->getPageId(); ?>'>
+	        <h3 class = 'articleTitle'><?php echo $a->getTitle(); ?></h3>
+		   <?php echo $a->getContent(); ?>
+		    </div>
+		    <?php
 		}
 		//END TEST
 		?>
-		</span>
+		
 		
 	</body>
 	<footer>
 	
 	</footer>
+	footer
 </html>

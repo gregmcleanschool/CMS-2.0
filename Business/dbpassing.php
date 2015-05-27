@@ -84,7 +84,7 @@ class DataPassing
              $article['title'],
              $article['content'],
              $article['articleOrder'],
-             $pageId
+             $article['pageId']
             );
             
             $articles[] = $aArticle;
@@ -94,6 +94,7 @@ class DataPassing
         return $articles;
         
     }
+    
     
     
 }
