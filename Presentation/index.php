@@ -18,42 +18,42 @@ $pages = $db->getPageByWebPageId($webSiteId);
 		<title> <?php echo $webPage->getTitle(); ?></title>
 	</head>
 	<body>
+		<div class="page-wrap">
 		<button id = "test"> Test</button>
-	
-		<h1 id = "name"><?php echo $webPage->getTitle(); ?></h1>
-		
-		<?php
-    		foreach ($pages as $p) 
+    	    <div class = 'boarder'>
+        		<h1 id = "name"><?php echo $webPage->getTitle(); ?></h1>
+        		
+        		<?php
+            		foreach ($pages as $p) 
+            		{
+            	?>
+        	    <div class = 'noHilight' id = 'page <?php echo $p->getPageId(); ?>'>
+        		    <span class = 'page'><?php echo $p->getPageTitle(); ?></span>
+        		</div>
+                <?php        
+                    }
+        		?>
+            </div>
+        
+    		<?php
+    		//START Test
+    		$articles = $db->getArticleByPageId($webSiteId);
+    		
+    		foreach($articles as $a)
     		{
-    	?>
-	    <div class = 'noHilight' id = 'page <?php echo $p->getPageId(); ?>'>
-		    <span class = 'page'><?php echo $p->getPageTitle(); ?></span>
-		</div>
-        <?php        
-            }
-		?>
-        
-        
-		<?php
-		//START Test
-		$articles = $db->getArticleByPageId(1);
-		
-		foreach($articles as $a)
-		{
-		    ?>
-	    <div class = 'articleOnPage<?php echo $a->getPageId(); ?>'>
-	        <h3 class = 'articleTitle'><?php echo $a->getTitle(); ?></h3>
-		   <?php echo $a->getContent(); ?>
-		    </div>
-		    <?php
-		}
-		//END TEST
-		?>
-		
-		
-	</body>
+    		    ?>
+    	    <div class = 'articleOnPage<?php echo $a->getPageId(); ?>'>
+    	        <h3 class = 'articleTitle'><?php echo $a->getTitle(); ?></h3>
+    		   <?php echo $a->getContent(); ?>
+    		    </div>
+    		    <?php
+    		}
+    		//END TEST
+    		?>
+    	</body>
+	</div>
 	<footer>
-	
-	</footer>
 	footer
+	</footer>
+	
 </html>

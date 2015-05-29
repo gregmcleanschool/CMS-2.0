@@ -4,6 +4,7 @@ $(document).ready(function(){
 	
 	addSpanToName();
 	animateWebpageTitle();
+	positionFooter();
 	
 	//wraps each letter in the name paragraph in a <span> tag 
 	//for individual animation 
@@ -72,7 +73,9 @@ $(document).ready(function(){
 	
 	
 	        $("#test").click(function(){
-        
+        	    var bottomOfWindow = $(window).height();
+	   // alert(bottomOfWindow);
+	   positionFooter();
     });
 	
 	//when the mouse clicks a page
@@ -97,5 +100,15 @@ $(document).ready(function(){
         
         
     });	
+	
+	function positionFooter()
+	{
+//var bottomOfWindow = $(window).height();
+        
+        //var footerPosition =  bottomOfWindow - $('footer').height();
+        
+       // $('footer').animate({ bottom: '50px' });
+	}
+	
 	
 });//end onload
