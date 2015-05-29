@@ -1,9 +1,22 @@
+
+
+body{
+    background-image: url("http://ugkk8c1b14e5.gr3gmcl3an.koding.io/CMS-2.0/Presentation/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
+}
+
+
+
 #name {
 font-family: "Times New Roman";
-font-size: 20px;
+
 position: relative;
 text-align: center;
 top: 110px;
+color: MediumBlue;
+font-size: 200%;
 }
 
 [id^="nameAnimate"]{
@@ -19,7 +32,7 @@ opacity: 1.0;
 
 h3.articleTitle{
 display: block;
-
+font-size: 150%;
 
 }
 
@@ -32,6 +45,7 @@ margin-right: auto;
 min-width: 200px;
 display:none;
 padding: 10px;
+font-size: 100%;
 }
 
 
@@ -59,17 +73,11 @@ opacity: 0.0;
 
 
 div.highlight{
-background-color: LightGrey ;
+background-color: DodgerBlue   ;
 
-height: 50px;
-width: 50%;
-min-width: 200px;
-text-align: center;
-display: table;
-margin-left: auto;
-margin-right: auto;
-margin-top: 20px;
-opacity: 0.0;
 
 }
 
+div.lowHighlight{
+    background-color: DeepSkyBlue  ;
+}

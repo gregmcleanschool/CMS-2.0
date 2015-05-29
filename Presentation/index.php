@@ -19,7 +19,8 @@ $pages = $db->getPageByWebPageId($webSiteId);
 	</head>
 	<body>
 		<button id = "test"> Test</button>
-		<p id = "name"><?php echo $webPage->getTitle(); ?></p>
+	
+		<h1 id = "name"><?php echo $webPage->getTitle(); ?></h1>
 		
 		<?php
     		foreach ($pages as $p) 

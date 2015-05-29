@@ -56,35 +56,34 @@ $(document).ready(function(){
 	
 
 
-    //     $("p").click(function(){
-    //     $(this).hide();
-    // });
+
 
 	
-	//when the mouse hovers over a page
-    // $(".noHilight").hover(function(){
-    //     // if($( this ).attr('class') == "noHilight")
-    //     // {
-    //         //change css to show highlighted div
-    //         $( this ).toggleClass("highlight");
-    //         //get the page id selected
-    //         var selectedPageId = $( this ).attr('id');
-    //         //display articles assocaited with that page
-    //         var selectedArticles = '.articleOnPage' + selectedPageId.slice(-1);
-    //         $('#test').html(selectedArticles);
-            
-    //       //  $('#atPage5').css('display','inline');
-            
-    //         $(selectedArticles).fadeToggle(300);
-    //       // $(selectedArticles).children("span").toggle();
+//	when the mouse hovers over a page
+    $(".noHilight").hover(function(){
 
-    // });
+         //   Only show hover effect if page is not selected
+         if( $( this ).attr('class') == 'noHilight' || $( this ).attr('class') == 'noHilight lowHighlight' )
+         {
+                $( this ).toggleClass('lowHighlight');
+         }
+
+    });
 	
 	
-	//when the mouse hovers over a page
+	        $("#test").click(function(){
+        
+    });
+	
+	//when the mouse clicks a page
     $(".noHilight").click(function(){
+        
+        //remove any articles besides the one clicked
+        $('[class^="articleOnPage"]').hide();
+        $('[class^="noHilight"]').attr('class', "noHilight");
+        
         //change css to show highlighted div
-        $( this ).toggleClass("highlight");
+        $( this ).attr('class', "noHilight highlight");
         //get the page id selected
         var selectedPageId = $( this ).attr('id');
         //display articles assocaited with that page
@@ -95,6 +94,7 @@ $(document).ready(function(){
         
         $(selectedArticles).fadeToggle(300);
        // $(selectedArticles).children("span").toggle();
+        
         
     });	
 	
