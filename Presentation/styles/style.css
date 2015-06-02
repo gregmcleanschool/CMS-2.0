@@ -1,10 +1,15 @@
 #name {
-font-family: "Times New Roman";
+
 position: relative;
 text-align: center;
 top: 110px;
-color: #0000FF;
+color: white;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 font-size: 200%;
+}
+
+body{
+font-family: "Lato";
 }
 
 [id^="nameAnimate"]{
@@ -39,7 +44,7 @@ font-size: 100%;
 div.boarder{
 background-image: url("http://ugkk8c1b14e5.gr3gmcl3an.koding.io/CMS-2.0/Presentation/images/bg.jpg");
 background-size:cover;
-padding-bottom: 50px;
+padding-bottom: 20px;
 
 }
 
@@ -102,20 +107,32 @@ html, body {
  
  div.page-wrap{
      position: relative;
-     top: -25px;
+     
  }
  
  footer{
 background: White;
-  border: 5px solid black;
+
   text-align: center; 
- position: fixed;
-  border-radius: 25px;
+ position: relative;
+  padding: 3em;
   width: 100%;
   height: 25px;
-  
+ background-color: rgb(13,154,241);
+ top:5em;
+ color: white;
+ } 
+/* visited link */
+footer a:visited {
+    color: white;
+}
 
-  left: 0%;
- 
-  margin-left: -100px;
- }
+/* mouse over link */
+footer a:hover {
+    color: white;
+}
+
+/* selected link */
+footer a:active {
+    color: white;
+}

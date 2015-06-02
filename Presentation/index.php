@@ -13,6 +13,7 @@ $pages = $db->getPageByWebPageId($webSiteId);
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<script src="scripts/jquery-1.11.2.js"></script>
 		<script src="scripts/myscript.js"></script>
 		<title> <?php echo $webPage->getTitle(); ?></title>
@@ -53,7 +54,7 @@ $pages = $db->getPageByWebPageId($webSiteId);
     	</body>
 	</div>
 	<footer>
-	footer
+	Image taken from <a href = 'http://all-free-download.com/'>all-free-download.com/</a>
 	</footer>
 	
 </html>
