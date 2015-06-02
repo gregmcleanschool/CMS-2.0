@@ -20,7 +20,7 @@ $pages = $db->getPageByWebPageId($webSiteId);
 	</head>
 	<body>
 		<div class="page-wrap">
-		<button id = "test"> Test</button>
+		<!--<button id = "test"> Test</button>-->
     	    <div class = 'boarder'>
         		<h1 id = "name"><?php echo $webPage->getTitle(); ?></h1>
         		
@@ -46,7 +46,7 @@ $pages = $db->getPageByWebPageId($webSiteId);
     	    <div class = 'articleOnPage<?php echo $a->getPageId(); ?>'>
     	        <h3 class = 'articleTitle'><?php echo $a->getTitle(); ?></h3>
     		   <?php echo $a->getContent(); ?>
-    		    </div>
+    		</div>
     		    <?php
     		}
     		//END TEST
@@ -54,7 +54,17 @@ $pages = $db->getPageByWebPageId($webSiteId);
     	</body>
 	</div>
 	<footer>
-	Image taken from <a href = 'http://all-free-download.com/'>all-free-download.com/</a>
+	    <table>
+	    <tr>
+            <td class = 'left'>
+                <ul>
+                    <li><?php echo $webPage->getAuthorName(); ?></li>
+                    <li><?php echo $webPage->getCompanyName(); ?></li>
+                </ul>
+            </td>
+            <td>Image taken from <a href = 'http://all-free-download.com/'>all-free-download.com/</a></td> 
+        </tr>
+        </table>
 	</footer>
 	
 </html>
