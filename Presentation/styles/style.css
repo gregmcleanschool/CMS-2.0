@@ -67,6 +67,17 @@ opacity: 0.0;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 div.highlight{
 background-color: DodgerBlue   ;
 
@@ -101,6 +112,7 @@ footer, .page-wrap:after {
 }
 
  
+
 footer{
 background: White;
 text-align: center; 
@@ -148,4 +160,84 @@ footer span.left{
 footer a {
     color: white;
 }
+
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -10em; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+footer, .page-wrap:after {
+  height: 10em; 
+  
+}
+
+ 
+footer{
+background: White;
+text-align: center; 
+
+height:10em;
+background-color: rgb(13,154,241);
+
+color: white;
+
+   
+
+  width: 100%;
+
+
+
+
+ } 
+ 
+ footer table, tr, td{
+     /* border: 1px solid black;  */
+      
+ }
+ 
+ td.left{
+ text-align: left;
+ vertical-align: middle;
+     
+ }
+ 
+ footer table{
+ display: table;
+ width: 100%;
+ height: 100%;
+ text-align: center;
+     
+ }
+ 
+footer ul{
+ float: right;
+}
+ 
+footer span.right{
+    float: right;
+    text-align: left; 
+}
+
+footer span.left{
+    float:left;
+    text-align: left;
+    
+}
+
+footer a {
+    color: white;
+}
+
 
